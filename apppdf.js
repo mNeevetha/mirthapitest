@@ -23,10 +23,14 @@ var html = req.body.htmlPage;
       .create(html, options)
       .toFile(filePath, function(err, res) {
        
-        if (err) return res.json({ message: 'Print error' , link: filePath, erro:err,res:res });
-       res.json({ message: 'Print Sucess' , link: filePath, erro:err,res:res });
+        if (err) {
+          res.json({ message: 'Print error' , link: filePath, erro:err,res:res });
+        }else
+        {
+        res.json({ message: 'Print Sucess' , link: filePath, erro:err,res:res });
+        }
       });
-    
+    //res.json({ message: 'Print sucess', link: filePath});
   
 
 });
