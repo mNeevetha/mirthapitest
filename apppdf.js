@@ -5,7 +5,7 @@ const router = express.Router();
 var pdf = require('html-pdf');
 var contentbody;
 // Fetch List of APS query records for a single user
-router.get('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
  
 filePath ="D://APSReport"+new Date().getTime()+".pdf";
 
