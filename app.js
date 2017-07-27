@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 const aps = require('./API');
+const apppdf = require('./apppdf');
 var bodyParser = require('body-parser');
 // Routes
 app.get('/', function(req, res) {
@@ -9,6 +10,7 @@ app.get('/', function(req, res) {
 
 app.use(bodyParser.json());
 app.use('/api', aps);
+app.use('/pdf', apppdf);
 // Listen
 var port = process.env.PORT || 3000;
 app.listen(port);
