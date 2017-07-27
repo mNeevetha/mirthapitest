@@ -22,10 +22,11 @@ var html = req.body.htmlPage;
     pdf
       .create(html, options)
       .toFile(filePath, function(err, res) {
-        if (err) return console.log(err);
-        console.log(res);
+       
+        if (err) return res.json({ message: 'Print error' , link: filePath, erro:err,res:res });
+       res.json({ message: 'Print Sucess' , link: filePath, erro:err,res:res });
       });
-    res.json({ message: 'Print Sucess' });
+    
   
 
 });
